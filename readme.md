@@ -20,7 +20,7 @@ Klassisches Schiffe versenken als Konsolenspiel in Java. Gespielt wird gegen den
 
 ## Projekt
 
-Semesterprojekt für Strukturierte Programmierung (STPRO), umgesetzt mit KI-Agenten. Geplante Features: [features.md](features.md) · Regeln für den Agenten: [agents.md](agents.md)
+Semesterprojekt für Strukturierte Programmierung (STPRO), umgesetzt mit KI-Agenten. Geplante Features: [features.md](features.md) · Regeln für den Agenten: [agents.md](agents.md) · Bedienung: [manual.md](manual.md)
 
 ---
 
