@@ -36,4 +36,38 @@ public class Anzeige {
         System.out.println("Antwort: \"Vorbei!\" oder \"Daneben!\" bei Wasser, \"Treffer!\" bei einem Treffer,");
         System.out.println("\"Treffer, versenkt!\", wenn ein Schiff versenkt ist.");
     }
+
+    // Zeigt das eigene und das gegnerische Spielfeld nebeneinander, danach eine Trennlinie.
+    static void zeigeBretter(Brett eigenes, Brett gegner) {
+        System.out.println();
+        System.out.println("     Deine Flotte               Gegner");
+        System.out.println("     A B C D E F G H I J        A B C D E F G H I J");
+        for (int zeile = 0; zeile < Spielfeld.GROESSE; zeile++) {
+            System.out.printf("%3d  ", zeile + 1);
+            zeigeZeile(eigenes, zeile);
+            System.out.printf("  %3d  ", zeile + 1);
+            zeigeZeile(gegner, zeile);
+            System.out.println();
+        }
+        System.out.println("---------------------------------------------------");
+    }
+
+    // Gibt eine Zeile eines Spielfelds aus: 10 Symbole, jeweils mit Leerzeichen danach.
+    static void zeigeZeile(Brett brett, int zeile) {
+        for (int spalte = 0; spalte < Spielfeld.GROESSE; spalte++) {
+            int code = brett.felder[Spielfeld.index(zeile, spalte)];
+            System.out.print(symbol(code) + " ");
+        }
+    }
+
+    // Liefert das Symbol für einen Feldcode: ~ unbekannt, o daneben, X Treffer oder versenkt.
+    static String symbol(int code) {
+        String zeichen = "~";
+        if (code == Spielfeld.DANEBEN) {
+            zeichen = "o";
+        } else if (code == Spielfeld.TREFFER || code == Spielfeld.VERSENKT) {
+            zeichen = "X";
+        }
+        return zeichen;
+    }
 }

@@ -28,10 +28,12 @@ public class Main {
         System.out.println("Auf Wiedersehen!");
     }
 
-    // Startet ein neues Spiel. Vorerst nur ein Hinweis:
-    // das Spiel selbst kommt mit den Features 2-8 aus features.md.
+    // Startet ein neues Spiel: legt beide Spielfelder an und zeigt sie.
+    // Aufstellung und Angriff kommen mit den Features 3-8 aus features.md.
     static void neuesSpiel() {
-        System.out.println();
-        System.out.println("Das Spiel ist noch in Arbeit (Features 2-8).");
+        Brett eigenes = new Brett();
+        Brett gegner = new Brett();
+        Anzeige.zeigeBretter(eigenes, gegner);
+        System.out.println("Aufstellung und Angriff folgen (Features 3-8).");
     }
 }

@@ -5,7 +5,7 @@ Umsetzung in der Reihenfolge der Nummern. Ein Feature wird abgehakt (`[x]`), sob
 ## Grundspiel
 
 - [x] 1. Startmenü: Neues Spiel, Spielregeln, Beenden
-- [ ] 2. Spielfeld 10 × 10 (A–J, 1–10): eigenes und gegnerisches Feld nebeneinander in der Konsole
+- [x] 2. Spielfeld 10 × 10 (A–J, 1–10): eigenes und gegnerisches Feld nebeneinander in der Konsole
 - [ ] 3. Flotte je Spieler: 1 × Schlachtschiff (5), 2 × Kreuzer (4), 3 × Zerstörer (3), 4 × U-Boot (2)
 - [ ] 4. Zufällige Aufstellung beider Flotten: waagerecht oder senkrecht, keine Überlappung, Schiffe berühren sich nicht, auch nicht diagonal (Standard; im Spieltest prüfen, ob der Computer dadurch zu stark wird)
 - [ ] 5. Angriff per Koordinate (z. B. `C5`); ungültige und schon beschossene Felder werden abgewiesen

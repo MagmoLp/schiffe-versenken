@@ -38,11 +38,30 @@ Gib die Nummer ein und drücke Enter:
 
 | Eingabe | Was passiert |
 |---|---|
-| `1` | Neues Spiel – zurzeit nur ein Hinweis, das Spiel selbst folgt mit den nächsten Features |
+| `1` | Neues Spiel – zeigt dein Spielfeld und das des Gegners (siehe unten); Aufstellung und Angriff folgen mit den nächsten Features, danach erscheint wieder das Menü |
 | `2` | Die Spielregeln werden angezeigt, danach erscheint wieder das Menü |
 | `3` | Das Programm verabschiedet sich und endet |
 
 Jede andere Eingabe (auch nur Enter) wird abgewiesen: Es erscheint ein Hinweis mit Beispiel, dann dieselbe Frage noch einmal.
+
+## Spielfeld
+
+Links steht dein Spielfeld, rechts das des Gegners. Spalten heißen A–J, Zeilen 1–10; ein Feld wird mit Buchstabe und Zahl angegeben, z. B. `C5`.
+
+```
+     Deine Flotte               Gegner
+     A B C D E F G H I J        A B C D E F G H I J
+  1  ~ ~ ~ ~ ~ ~ ~ ~ ~ ~     1  ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+  2  ~ ~ ~ ~ ~ ~ ~ ~ ~ ~     2  ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+ ...
+ 10  ~ ~ ~ ~ ~ ~ ~ ~ ~ ~    10  ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+```
+
+| Symbol | Bedeutung |
+|---|---|
+| `~` | Wasser bzw. noch nicht beschossen |
+| `o` | Schuss daneben |
+| `X` | Treffer |
 
 ## Beenden
 
