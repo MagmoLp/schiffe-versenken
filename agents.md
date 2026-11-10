@@ -55,7 +55,8 @@ Bis dahin ist das Spielfeld ein `int[100]` mit Index `zeile * 10 + spalte`. Umge
 - `static`-Variablen nur für Konstanten, den Scanner, den Farbschalter und `eingabeEnde`; alles andere als Parameter
 - Feldcodes als Konstanten: `UNBEKANNT = 0`, `DANEBEN = 1`, `TREFFER = 2`, `VERSENKT = 3`
 - Spielregeln, die ich im Spieltest ausprobiere, als Konstanten: Zeitlimit pro Zug und ob Schiffe sich berühren dürfen (Standard: nein)
-- `start.bat` gleich mit dem ersten Feature anlegen: `javac -encoding UTF-8 *.java && java Main`, danach `pause` (bei Kompilierfehler startet nichts)
+- Quellcode in `src/`, Kompilate in `out/` (nicht im Git)
+- `start.bat` gleich mit dem ersten Feature anlegen: `javac -encoding UTF-8 -d out src\*.java && java -cp out Main`, danach `pause` (bei Kompilierfehler startet nichts)
 
 ## Stabilität
 

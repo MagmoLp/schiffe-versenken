@@ -4,7 +4,7 @@ Umsetzung in der Reihenfolge der Nummern. Ein Feature wird abgehakt (`[x]`), sob
 
 ## Grundspiel
 
-- [ ] 1. Startmenü: Neues Spiel, Spielregeln, Beenden
+- [x] 1. Startmenü: Neues Spiel, Spielregeln, Beenden
 - [ ] 2. Spielfeld 10 × 10 (A–J, 1–10): eigenes und gegnerisches Feld nebeneinander in der Konsole
 - [ ] 3. Flotte je Spieler: 1 × Schlachtschiff (5), 2 × Kreuzer (4), 3 × Zerstörer (3), 4 × U-Boot (2)
 - [ ] 4. Zufällige Aufstellung beider Flotten: waagerecht oder senkrecht, keine Überlappung, Schiffe berühren sich nicht, auch nicht diagonal (Standard; im Spieltest prüfen, ob der Computer dadurch zu stark wird)
@@ -12,7 +12,7 @@ Umsetzung in der Reihenfolge der Nummern. Ein Feature wird abgehakt (`[x]`), sob
 - [ ] 6. Meldungen: bei Wasser zufällig „Vorbei!“ oder „Daneben!“, sonst „Treffer!“ bzw. „Treffer, versenkt!“
 - [ ] 7. Computergegner Stufe leicht: schießt zufällig auf noch unbeschossene Felder
 - [ ] 8. Spielende, sobald eine Flotte komplett versenkt ist; der Sieger wird angezeigt
-- [ ] 9. Start per Doppelklick auf `start.bat`
+- [x] 9. Start per Doppelklick auf `start.bat`
 
 ## Schwierigkeitsstufen
 

@@ -1,0 +1,7 @@
+# Kompilate (von start.bat und IntelliJ erzeugt)
+out/
+*.class
+
+# IntelliJ-Projektdateien
+.idea/
+*.iml
