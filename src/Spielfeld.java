@@ -52,6 +52,34 @@ public class Spielfeld {
         }
     }
 
+    // Schießt auf Feld i des Bretts und liefert den neuen Feldcode: DANEBEN, TREFFER oder VERSENKT.
+    // Gilt für Mensch und Computer. Nur für noch unbeschossene Felder aufrufen.
+    static int schiesse(Brett ziel, int i) {
+        int nr = ziel.schiffAuf[i];
+        int code = DANEBEN;
+        if (nr != KEIN_SCHIFF) {
+            ziel.treffer[nr]++;
+            code = TREFFER;
+            if (ziel.treffer[nr] == ziel.flotte[nr].laenge()) {
+                code = VERSENKT;
+            }
+        }
+        ziel.felder[i] = code;
+        if (code == VERSENKT) {
+            markiereVersenkt(ziel, nr);
+        }
+        return code;
+    }
+
+    // Setzt alle Felder von Schiff Nr. nr auf VERSENKT.
+    static void markiereVersenkt(Brett brett, int nr) {
+        for (int i = 0; i < brett.felder.length; i++) {
+            if (brett.schiffAuf[i] == nr) {
+                brett.felder[i] = VERSENKT;
+            }
+        }
+    }
+
     // Liefert eine Zufallszahl von 0 bis n - 1.
     static int zufallsZahl(int n) {
         return (int) (Math.random() * n);

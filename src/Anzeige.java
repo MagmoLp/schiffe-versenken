@@ -64,6 +64,22 @@ public class Anzeige {
         }
     }
 
+    // Zeigt die Meldung zu einem Schuss - nur anhand des Feldcodes.
+    // Bei Wasser zufällig "Vorbei!" oder "Daneben!".
+    static void zeigeMeldung(int code) {
+        if (code == Spielfeld.DANEBEN) {
+            if (Spielfeld.zufallsZahl(2) == 0) {
+                System.out.println("Vorbei!");
+            } else {
+                System.out.println("Daneben!");
+            }
+        } else if (code == Spielfeld.TREFFER) {
+            System.out.println("Treffer!");
+        } else if (code == Spielfeld.VERSENKT) {
+            System.out.println("Treffer, versenkt!");
+        }
+    }
+
     // Liefert das Symbol für Feld i: X Treffer oder versenkt, o daneben,
     // # Schiff (nur wenn schiffeZeigen), sonst ~ Wasser bzw. unbekannt.
     static String symbol(Brett brett, int i, boolean schiffeZeigen) {

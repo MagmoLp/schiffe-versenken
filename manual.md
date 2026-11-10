@@ -38,7 +38,7 @@ Gib die Nummer ein und drücke Enter:
 
 | Eingabe | Was passiert |
 |---|---|
-| `1` | Neues Spiel – stellt beide Flotten zufällig auf und zeigt dein Spielfeld und das des Gegners (siehe unten); der Angriff folgt mit den nächsten Features, danach erscheint wieder das Menü |
+| `1` | Neues Spiel – stellt beide Flotten zufällig auf, zeigt dein Spielfeld und das des Gegners und startet den Angriff (siehe unten) |
 | `2` | Die Spielregeln werden angezeigt, danach erscheint wieder das Menü |
 | `3` | Das Programm verabschiedet sich und endet |
 
@@ -64,11 +64,33 @@ Beide Flotten (je 10 Schiffe) werden bei jedem neuen Spiel zufällig aufgestellt
 | `#` | dein Schiff (nur auf deinem Feld sichtbar) |
 | `~` | Wasser bzw. noch nicht beschossen |
 | `o` | Schuss daneben |
-| `X` | Treffer |
+| `X` | Treffer (auch versenkte Schiffe) |
+
+## Angriff
+
+Nach der Aufstellung fragt das Spiel nach deinem Schuss:
+
+```
+Dein Schuss (z. B. C5, x = Spiel abbrechen):
+```
+
+- Gib ein Feld des Gegners ein: Buchstabe `A`–`J` (groß oder klein) und Zahl `1`–`10`, ohne Leerzeichen dazwischen, z. B. `C5`, `c5` oder `J10`.
+- Danach werden beide Spielfelder neu angezeigt, darunter die Antwort:
+
+| Antwort | Bedeutung |
+|---|---|
+| „Vorbei!“ oder „Daneben!“ | Wasser (welche der beiden Meldungen kommt, ist Zufall) |
+| „Treffer!“ | Ein Schiff wurde getroffen |
+| „Treffer, versenkt!“ | Das letzte Feld eines Schiffs wurde getroffen – das Schiff ist versenkt |
+
+- Ungültige Eingaben (z. B. `K5`, `C0`, `C 5`) und Felder, auf die du schon geschossen hast, werden mit einem Hinweis abgewiesen; du verlierst dadurch keinen Zug.
+- Mit `x` brichst du das Spiel ab und kommst zurück ins Startmenü.
+
+Zurzeit schießt nur du: Die Züge des Computers und das Spielende folgen mit den nächsten Features.
 
 ## Beenden
 
-- Im Menü `3` eingeben, oder
-- die Eingabe beenden mit **Strg+Z** und danach **Enter**: Das Programm meldet „Eingabe beendet.“ und endet geordnet.
+- Im Menü `3` eingeben (ein laufendes Spiel vorher mit `x` abbrechen), oder
+- die Eingabe beenden mit **Strg+Z** und danach **Enter** – auch mitten im Spiel: Das Programm meldet „Eingabe beendet.“ und endet geordnet.
 
 Beim Start über `start.bat` bleibt das Fenster danach offen, bis du eine beliebige Taste drückst.

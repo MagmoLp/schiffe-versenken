@@ -29,13 +29,30 @@ public class Main {
     }
 
     // Startet ein neues Spiel: legt beide Spielfelder an, stellt beide Flotten
-    // zufällig auf und zeigt die Felder. Der Angriff kommt mit den Features 5-8 aus features.md.
+    // zufällig auf, zeigt die Felder und startet die Schussschleife.
     static void neuesSpiel() {
         Brett eigenes = Spielfeld.neuesBrett();
         Brett gegner = Spielfeld.neuesBrett();
         Aufstellung.stelleZufaelligAuf(eigenes);
         Aufstellung.stelleZufaelligAuf(gegner);
         Anzeige.zeigeBretter(eigenes, gegner);
-        System.out.println("Angriff folgt (Features 5-8).");
+        spieleRunden(eigenes, gegner);
+    }
+
+    // Schussschleife: Der Spieler schießt, bis er mit x abbricht oder die Eingabe endet.
+    // Computerzüge und Spielende kommen mit den Features 7 und 8 aus features.md.
+    static void spieleRunden(Brett eigenes, Brett gegner) {
+        boolean abgebrochen = false;
+        while (!abgebrochen && !Eingabe.eingabeEnde) {
+            int ziel = Eingabe.leseZiel(gegner);
+            if (ziel == Eingabe.ABBRUCH) {
+                abgebrochen = true;
+                System.out.println("Spiel abgebrochen.");
+            } else if (ziel != Eingabe.KEIN_FELD) {
+                int code = Spielfeld.schiesse(gegner, ziel);
+                Anzeige.zeigeBretter(eigenes, gegner);
+                Anzeige.zeigeMeldung(code);
+            }
+        }
     }
 }

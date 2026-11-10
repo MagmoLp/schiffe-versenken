@@ -11,4 +11,7 @@ public class Brett {
 
     // Die 10 Schiffe dieses Spielers, in derselben Reihenfolge wie Spielfeld.FLOTTE_LAENGEN
     Schiff[] flotte = new Schiff[Spielfeld.FLOTTE_LAENGEN.length];
+
+    // Trefferzähler pro Schiff (gleiche Nummer wie in flotte), am Anfang überall 0
+    int[] treffer = new int[Spielfeld.FLOTTE_LAENGEN.length];
 }
