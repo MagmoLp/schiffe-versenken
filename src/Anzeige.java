@@ -32,6 +32,9 @@ public class Anzeige {
         System.out.println();
         System.out.println("Aufstellung: nach den klassischen Regeln, waagerecht oder senkrecht -");
         System.out.println("zufällig oder selbst per Texteingabe.");
+        if (!Aufstellung.BERUEHREN_ERLAUBT) {
+            System.out.println("Schiffe berühren sich nicht, auch nicht diagonal.");
+        }
         System.out.println("Angriff: Feld eingeben, z. B. C5");
         System.out.println("Antwort: \"Vorbei!\" oder \"Daneben!\" bei Wasser, \"Treffer!\" bei einem Treffer,");
         System.out.println("\"Treffer, versenkt!\", wenn ein Schiff versenkt ist.");
@@ -44,29 +47,34 @@ public class Anzeige {
         System.out.println("     A B C D E F G H I J        A B C D E F G H I J");
         for (int zeile = 0; zeile < Spielfeld.GROESSE; zeile++) {
             System.out.printf("%3d  ", zeile + 1);
-            zeigeZeile(eigenes, zeile);
+            zeigeZeile(eigenes, zeile, true);
             System.out.printf("  %3d  ", zeile + 1);
-            zeigeZeile(gegner, zeile);
+            zeigeZeile(gegner, zeile, false);
             System.out.println();
         }
         System.out.println("---------------------------------------------------");
     }
 
     // Gibt eine Zeile eines Spielfelds aus: 10 Symbole, jeweils mit Leerzeichen danach.
-    static void zeigeZeile(Brett brett, int zeile) {
+    // schiffeZeigen = true nur für das eigene Feld, die gegnerischen Schiffe bleiben verdeckt.
+    static void zeigeZeile(Brett brett, int zeile, boolean schiffeZeigen) {
         for (int spalte = 0; spalte < Spielfeld.GROESSE; spalte++) {
-            int code = brett.felder[Spielfeld.index(zeile, spalte)];
-            System.out.print(symbol(code) + " ");
+            int i = Spielfeld.index(zeile, spalte);
+            System.out.print(symbol(brett, i, schiffeZeigen) + " ");
         }
     }
 
-    // Liefert das Symbol für einen Feldcode: ~ unbekannt, o daneben, X Treffer oder versenkt.
-    static String symbol(int code) {
+    // Liefert das Symbol für Feld i: X Treffer oder versenkt, o daneben,
+    // # Schiff (nur wenn schiffeZeigen), sonst ~ Wasser bzw. unbekannt.
+    static String symbol(Brett brett, int i, boolean schiffeZeigen) {
+        int code = brett.felder[i];
         String zeichen = "~";
         if (code == Spielfeld.DANEBEN) {
             zeichen = "o";
         } else if (code == Spielfeld.TREFFER || code == Spielfeld.VERSENKT) {
             zeichen = "X";
+        } else if (schiffeZeigen && brett.schiffAuf[i] != Spielfeld.KEIN_SCHIFF) {
+            zeichen = "#";
         }
         return zeichen;
     }

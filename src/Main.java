@@ -28,12 +28,14 @@ public class Main {
         System.out.println("Auf Wiedersehen!");
     }
 
-    // Startet ein neues Spiel: legt beide Spielfelder an und zeigt sie.
-    // Aufstellung und Angriff kommen mit den Features 3-8 aus features.md.
+    // Startet ein neues Spiel: legt beide Spielfelder an, stellt beide Flotten
+    // zufällig auf und zeigt die Felder. Der Angriff kommt mit den Features 5-8 aus features.md.
     static void neuesSpiel() {
-        Brett eigenes = new Brett();
-        Brett gegner = new Brett();
+        Brett eigenes = Spielfeld.neuesBrett();
+        Brett gegner = Spielfeld.neuesBrett();
+        Aufstellung.stelleZufaelligAuf(eigenes);
+        Aufstellung.stelleZufaelligAuf(gegner);
         Anzeige.zeigeBretter(eigenes, gegner);
-        System.out.println("Aufstellung und Angriff folgen (Features 3-8).");
+        System.out.println("Angriff folgt (Features 5-8).");
     }
 }

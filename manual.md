@@ -38,7 +38,7 @@ Gib die Nummer ein und drücke Enter:
 
 | Eingabe | Was passiert |
 |---|---|
-| `1` | Neues Spiel – zeigt dein Spielfeld und das des Gegners (siehe unten); Aufstellung und Angriff folgen mit den nächsten Features, danach erscheint wieder das Menü |
+| `1` | Neues Spiel – stellt beide Flotten zufällig auf und zeigt dein Spielfeld und das des Gegners (siehe unten); der Angriff folgt mit den nächsten Features, danach erscheint wieder das Menü |
 | `2` | Die Spielregeln werden angezeigt, danach erscheint wieder das Menü |
 | `3` | Das Programm verabschiedet sich und endet |
 
@@ -48,17 +48,20 @@ Jede andere Eingabe (auch nur Enter) wird abgewiesen: Es erscheint ein Hinweis m
 
 Links steht dein Spielfeld, rechts das des Gegners. Spalten heißen A–J, Zeilen 1–10; ein Feld wird mit Buchstabe und Zahl angegeben, z. B. `C5`.
 
+Beide Flotten (je 10 Schiffe) werden bei jedem neuen Spiel zufällig aufgestellt, waagerecht oder senkrecht; Schiffe berühren sich nicht, auch nicht diagonal. Deine Schiffe siehst du als `#`, die des Gegners bleiben verdeckt.
+
 ```
      Deine Flotte               Gegner
      A B C D E F G H I J        A B C D E F G H I J
-  1  ~ ~ ~ ~ ~ ~ ~ ~ ~ ~     1  ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
-  2  ~ ~ ~ ~ ~ ~ ~ ~ ~ ~     2  ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+  1  # # ~ # # ~ ~ ~ ~ ~     1  ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+  2  ~ ~ ~ ~ ~ ~ # ~ ~ ~     2  ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
  ...
- 10  ~ ~ ~ ~ ~ ~ ~ ~ ~ ~    10  ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+ 10  ~ ~ # ~ # ~ ~ ~ ~ ~    10  ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
 ```
 
 | Symbol | Bedeutung |
 |---|---|
+| `#` | dein Schiff (nur auf deinem Feld sichtbar) |
 | `~` | Wasser bzw. noch nicht beschossen |
 | `o` | Schuss daneben |
 | `X` | Treffer |
